@@ -118,22 +118,21 @@ int main()
     size_t temp=0;
     size_t num=0;
 
-    printf("Wie viele Quadrahte und Rechtecke\n");
+    printf("Wie viele Quadrate und Rechtecke: ");
     cin>>value;
 
     while(temp<value)
     {
-
-            printf("Seitenl\x84nge a: ");
-            cin>>a;
-            printf("Seitenl\x84nge b (bei Quadraht 0): ");
-            cin>>b;
+        printf("Seitenl\x84nge a: ");
+        cin>>a;
+        printf("Seitenl\x84nge b (bei Quadrat 0): ");
+        cin>>b;
 
 
         if(b==0)
-            pQuad[temp]=new cQuad(a);
+            pQuad[temp]=new cQuad(a);   //Objekt der Klasse cQuad der Adresse(aus dem Klassenpointer) zuweisen und mit dem Konstruktor für Quadrate anlegen
         else
-            pQuad[temp]=new cQuad(a,b);
+            pQuad[temp]=new cQuad(a,b); //Objekt der Klasse cQuad der Adresse(aus dem Klassenpointer) zuweisen und mit dem Konstruktor für Rechtecke anlegen
         temp++;
     }
 
