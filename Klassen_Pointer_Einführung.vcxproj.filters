@@ -18,13 +18,5 @@
     <ClCompile Include="Klassen_Pointer_Einfuehrung.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="cursor_pos.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="cursorpos.h">
-      <Filter>Quelldateien</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

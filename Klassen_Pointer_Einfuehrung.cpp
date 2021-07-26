@@ -2,7 +2,6 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<conio.h>
-#include"cursorpos.h"
 using namespace std;
 
 
@@ -113,7 +112,7 @@ int main()
     cQuad* pQuad[999]; //Pointer auf Klasse deklarieren
     bool esc=false;
     bool flag=false;
-   // bool square;
+
     double a,b;
     size_t value;     //size_t ist unsigned int mit angepasster größe. die größe richtet sich nach der CPU-Architektur, zb bei einem 8bit cpu entspricht dies uint8_t
     size_t temp=0;
@@ -124,20 +123,12 @@ int main()
 
     while(temp<value)
     {
-        //printf("Rechteck (0) oder Quadraht (1)");
-        //cin>>square;
 
-        //if(square)
-        //{
-        //    printf("Seitenl\x84nge");
-        //    cin>>a;
-        //} else
-        //{
             printf("Seitenl\x84nge a: ");
             cin>>a;
             printf("Seitenl\x84nge b (bei Quadraht 0): ");
             cin>>b;
-        //}
+
 
         if(b==0)
             pQuad[temp]=new cQuad(a);
@@ -152,7 +143,6 @@ int main()
         while(!flag)
         {
             system("cls");
-            set_cursor(2,0);
             printf("%d Eintr\x84ge vorhanden\nWelche Eintrag soll angezeigt werden:\t",value);
             cin>>num;
             if(num<=value)
