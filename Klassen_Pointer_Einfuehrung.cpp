@@ -113,33 +113,33 @@ int main()
     cQuad* pQuad[999]; //Pointer auf Klasse deklarieren
     bool esc=false;
     bool flag=false;
-    bool square;
+   // bool square;
     double a,b;
-    size_t value;
+    size_t value;     //size_t ist unsigned int mit angepasster größe. die größe richtet sich nach der CPU-Architektur, zb bei einem 8bit cpu entspricht dies uint8_t
     size_t temp=0;
     size_t num=0;
+
     printf("Wie viele Quadrahte und Rechtecke\n");
     cin>>value;
 
     while(temp<value)
     {
-        
-        printf("Rechteck (0) oder Quadraht (1)");
-        cin>>square;
+        //printf("Rechteck (0) oder Quadraht (1)");
+        //cin>>square;
 
-        if(square)
-        {
-            printf("Seitenl\x84nge");
+        //if(square)
+        //{
+        //    printf("Seitenl\x84nge");
+        //    cin>>a;
+        //} else
+        //{
+            printf("Seitenl\x84nge a: ");
             cin>>a;
-        } else
-        {
-            printf("Seitenl\x84nge a");
-            cin>>a;
-            printf("Seitenl\x84nge b");
+            printf("Seitenl\x84nge b (bei Quadraht 0): ");
             cin>>b;
-        }
+        //}
 
-        if(square)
+        if(b==0)
             pQuad[temp]=new cQuad(a);
         else
             pQuad[temp]=new cQuad(a,b);
@@ -166,12 +166,12 @@ int main()
             printf("\nFl%ccheninhalt: %4.4lf",132,pQuad[num-1]->get_A());   //Zugriff auf Klasse jetzt nicht mehr mit objekt.funktion sonder pointer->funktion
             printf("\nUmfang: %4.4lf",(*pQuad[num-1]).get_u());             //andere schreibweise
             printf("\nSeitenl\x84nge a: %4.4lf",pQuad[num-1]->get_a());
-            if(!pQuad[num-1]->is_square())
-                printf("\nSeitenl\x84nge b: %4.4lf",pQuad[num-1]->get_b());
-            while(!_kbhit());
+            if(!pQuad[num-1]->is_square())                                  //überprüft ob die es sich um ein quadraht oder rechteck handelt
+                printf("\nSeitenl\x84nge b: %4.4lf\n",pQuad[num-1]->get_b());
+            while(!_kbhit());                                               //_kbhit() gibt 0 zurück wenn keine Taste gedrückt wurde, und 1 wenn eine Taste gedrückt wurde
         }
     }
-    for(size_t i=0; i<value; i++)
+    for(size_t i=0; i<value; i++)   //alle Objekte zerstören, die mit new erstellt wurden. (alles was mit "new" erstellt wird, muss auch mit "delete" zerstört werden
         delete pQuad[i];
     return 0;
 }
