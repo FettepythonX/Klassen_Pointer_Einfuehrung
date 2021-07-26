@@ -115,27 +115,24 @@ int main()
 
     double a,b;
     size_t value;     //size_t ist unsigned int mit angepasster größe. die größe richtet sich nach der CPU-Architektur, zb bei einem 8bit cpu entspricht dies uint8_t
-    size_t temp=0;
+    
     size_t num=0;
 
     printf("Wie viele Quadrate und Rechtecke: ");
     cin>>value;
 
-    while(temp<value)
+    for(size_t i=0; i<value; i++)
     {
         printf("Seitenl\x84nge a: ");
         cin>>a;
         printf("Seitenl\x84nge b (bei Quadrat 0): ");
         cin>>b;
-
-
         if(b==0)
-            pQuad[temp]=new cQuad(a);   //Objekt der Klasse cQuad der Adresse(aus dem Klassenpointer) zuweisen und mit dem Konstruktor für Quadrate anlegen
+            pQuad[i]=new cQuad(a);   //Objekt der Klasse cQuad der Adresse(aus dem Klassenpointer) zuweisen und mit dem Konstruktor für Quadrate anlegen
         else
-            pQuad[temp]=new cQuad(a,b); //Objekt der Klasse cQuad der Adresse(aus dem Klassenpointer) zuweisen und mit dem Konstruktor für Rechtecke anlegen
-        temp++;
+            pQuad[i]=new cQuad(a,b); //Objekt der Klasse cQuad der Adresse(aus dem Klassenpointer) zuweisen und mit dem Konstruktor für Rechtecke anlegen
     }
-
+    
     while(!esc)
     {
         flag=false;
