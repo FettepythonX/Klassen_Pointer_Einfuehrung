@@ -139,7 +139,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="cQuad.cpp" />
     <ClCompile Include="Klassen_Pointer_Einfuehrung.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="cQuad.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
