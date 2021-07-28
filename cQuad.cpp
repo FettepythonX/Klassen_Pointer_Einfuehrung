@@ -1,29 +1,29 @@
 #include"cQuad.h"
 
-class cQuad
-{
-private:
-    bool square;
-    double a;
-    double b;
-    double A;
-    double u;
-    void calc_A()
+//class cQuad
+//{
+//private:
+//    bool square;
+//    double a;
+//    double b;
+//    double A;
+//    double u;
+    void cQuad::calc_A()
     {
         A=a*b;
     }
-    void calc_u()
+    void cQuad::calc_u()
     {
         u=a+a+b+b;
     }
-    void calc_all()
+    void cQuad::calc_all()
     {
         calc_u();
         calc_A();
     }
 
-public:
-    void correct_a(double i_a)
+//public:
+    void cQuad::correct_a(double i_a)
     {
         if(square)
         {
@@ -35,18 +35,18 @@ public:
             calc_all();
     }
 
-    bool is_square()
+    bool cQuad::is_square()
     {
         return square;
     }
-    void correct_b(double i_b)
+    void cQuad::correct_b(double i_b)
     {
         if(i_b>0)
             a=i_b;
         calc_all();
     }
 
-    double get_a()
+    double cQuad::get_a()
     {
         if(a>0)
             return a;
@@ -54,7 +54,7 @@ public:
             return -1;
     }
 
-    double get_b()
+    double cQuad::get_b()
     {
         if(b>0)
             return b;
@@ -62,7 +62,7 @@ public:
             return -1;
     }
 
-    double get_u()
+    double cQuad::get_u()
     {
         if(u>0)
             return u;
@@ -70,7 +70,7 @@ public:
             return -1;
     }
 
-    double get_A()
+    double cQuad::get_A()
     {
         if(A>0)
             return A;
@@ -78,7 +78,7 @@ public:
             return -1;
     }
 
-    cQuad(double i_a, double i_b)   //rectangle
+    cQuad::cQuad(double i_a, double i_b)   //rectangle
     {
         square=false;
         a=i_a;
@@ -87,7 +87,7 @@ public:
         calc_u();
     }
 
-    cQuad(double i_a)   //square
+    cQuad::cQuad(double i_a)   //square
     {
         square=true;
         a=i_a;
@@ -97,4 +97,4 @@ public:
     }
 
 
-};
+//};
