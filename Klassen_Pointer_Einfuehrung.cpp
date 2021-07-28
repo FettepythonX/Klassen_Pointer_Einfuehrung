@@ -58,7 +58,7 @@ public:
         else
             return -1;
     }
-
+           
     double get_b()
     {
         if(b>0)
