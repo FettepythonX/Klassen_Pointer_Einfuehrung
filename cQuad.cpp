@@ -1,13 +1,5 @@
 #include"cQuad.h"
 
-//class cQuad
-//{
-//private:
-//    bool square;
-//    double a;
-//    double b;
-//    double A;
-//    double u;
     void cQuad::calc_A()
     {
         A=a*b;
@@ -21,8 +13,6 @@
         calc_u();
         calc_A();
     }
-
-//public:
     void cQuad::correct_a(double i_a)
     {
         if(square)
@@ -34,7 +24,6 @@
             a=i_a,
             calc_all();
     }
-
     bool cQuad::is_square()
     {
         return square;
@@ -45,7 +34,6 @@
             a=i_b;
         calc_all();
     }
-
     double cQuad::get_a()
     {
         if(a>0)
@@ -53,7 +41,6 @@
         else
             return -1;
     }
-
     double cQuad::get_b()
     {
         if(b>0)
@@ -61,7 +48,6 @@
         else
             return -1;
     }
-
     double cQuad::get_u()
     {
         if(u>0)
@@ -69,7 +55,6 @@
         else
             return -1;
     }
-
     double cQuad::get_A()
     {
         if(A>0)
@@ -77,7 +62,6 @@
         else
             return -1;
     }
-
     cQuad::cQuad(double i_a, double i_b)   //rectangle
     {
         square=false;
@@ -86,7 +70,6 @@
         calc_A();
         calc_u();
     }
-
     cQuad::cQuad(double i_a)   //square
     {
         square=true;
@@ -95,6 +78,3 @@
         calc_A();
         calc_u();
     }
-
-
-//};

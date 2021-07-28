@@ -7,7 +7,6 @@ private:
     double b;
     double A;
     double u;
-
     void calc_A();
     void calc_u();
     void calc_all();
