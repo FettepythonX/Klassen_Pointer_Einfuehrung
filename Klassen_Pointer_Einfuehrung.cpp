@@ -128,9 +128,9 @@ int main()
         printf("Seitenl\x84nge b (bei Quadrat 0): ");
         cin>>b;
         if(b==0)
-            pQuad[i]=new cQuad(a);   //Objekt der Klasse cQuad der Adresse(aus dem Klassenpointer) zuweisen und mit dem Konstruktor für Quadrate anlegen
+            pQuad[i]=new cQuad(a);   //Dynamische Instanzierung auf pQuad
         else
-            pQuad[i]=new cQuad(a,b); //Objekt der Klasse cQuad der Adresse(aus dem Klassenpointer) zuweisen und mit dem Konstruktor für Rechtecke anlegen
+            pQuad[i]=new cQuad(a,b); //Dynamische Instanzierung auf pQuad
     }
     
     while(!esc)
